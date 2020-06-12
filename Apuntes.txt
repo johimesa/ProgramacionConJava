@@ -1,0 +1,482 @@
+
+********************************************** SECCIÓN 2: Fundamentos Java: Introcción a Java
+
+2. Introcción de los Fundamentos de Java
+    Creado por James Gosling en los 90
+    Creado por Microsystems
+    En 2009 es adquirida por Oracle
+
+3. Características de Java
+    Basado en C y C++
+    Orientado a objetos
+    Simple, ya que usa Características de C y C++ eliminando cosas complejas
+    Distribuído, en red y en diferentes dispositivos
+    Multihilos
+    Seguro
+    Independiente de plataforma, cod. intermedio (bytecode)
+
+4. Evolución de Java
+    JSE: Soluciones de escritorio
+        - Aplicaciones Independientes
+        - Aplicaciones Distribuídas
+        - Applets
+
+    JEE: Soluciones Empresariales (antes conocida como J2EE)
+        - Aplicaciones Empresariales con alto nivel trasaccional (aplicaciones del lado del servidor).
+        - Comercio Electrónico
+        - Aplicaciones Web
+
+    JME: Soluciones de Consumo
+        - Celulares
+        - PDAs
+        - Televisores
+        - Microchips (navegación, cámaras de seguridad, routers, etc.)
+
+        * Dalvik: máquina virtual en Android que permite ejecutar aplicaciones programadas en Java.
+
+5. Java y la industria de Software
+
+6. Máquina Virtual de Java (JVM)
+    Código fuente (.java) --> javac --> Código Comilado (.class o Bytecode) => puede ser ejecutado en cualquier SO con JVM.
+    Write Once                                                              => Run Anywhere
+
+    Tiempo de Compilación: .java -> .class
+    Tiempo de Ejecución: Cargador de clases -> Veridicador de Bytecode -> Intérprete -> Ambiente Ejecución -> Hardware
+
+
+********************************************** SECCIÓN 4: Fundamentos Java: Variables en Java
+14. Reglas para definir una variable en Java
+    Notación camello
+    Inicia con minúscula -> apellidoPaterno
+    Puede iniciar con _, $ -> _nombre
+    No puede iniciar con números -> 2nombre
+    No se puede usar palabras reservadas
+
+
+********************************************** SECCIÓN 5: Fundamentos Java: Tipo primitivos en Java
+17. Tipos primitivos Integer
+    // byte, short, int, long
+
+    tipo.SIZE -> cantidad de bits
+    tipo.BYTES -> tamaño de bytes
+    tipo.MIN_VALUE -> valor mínimo
+    tipo.MAX_VALUE -> valor máximo
+
+18. Base decimal, hexadecimal y octal
+    0b1011 -> inicia con 0b es binario
+    0x123 -> incia con 0x es hexadecimal
+    012 -> inicia con 0 es octal
+    10 -> sistema decimal
+
+19. Tipos primitivos Flotantes
+    
+20. Tipos primitivos char
+
+21. Tipos primitivos boolean
+
+22. Conversión de tipos primitivos en Java
+
+
+********************************************** SECCIÓN 6: Fundamentos Java: Operadores en Java
+30. Precedencia de Operadores en Java
+
+    Prioridad   Operador        Tipo Operador   Operación
+    1           ++              Aritmético      Incremento previo o posterior (unario)
+                --              Aritmético      Decremento previo o posterior (unario)
+                +, -            Aritmético      Suma y Resta unaria
+                ~               Integral        Cambio de bits (unario)
+    2           (tipo)          Cualquiera
+    3           *, /, %         Aritmético      Multiplicación, división, resto
+    4           
+
+
+
+********************************************** SECCIÓN 14: Fundamentos Java: Memoria Stack y Heap en Java
+Persona p1 = new Persona();
+Persona p2 = p1;
+
+58. Memoria Heap almacena objetos en Java (Persona)
+    Memoria Stack almacena variables locales (p1, p2)
+
+
+********************************************** SECCIÓN 15: Fundamentos Java: Paso por Valor y Paso por Referencia en Java
+Paso por valor o valores de tipo primitivo. Se pasa solo una copia del valor original de la variable y no se puede modificar.
+Paso por Referencia se da cuando se pasa un objeto como parámetro y puede ser modificado en otro método.
+
+
+********************************************** SECCIÓN 20: Fundamentos Java: Contexto Estático en Java
+Contexto Estático -> carga de clases
+Contexto Dinámico -> carga de objetos
+
+
+********************************************** SECCIÓN 25: Fundamentos Java: Uso de la palabra final en Java
+public final class NombreClase -> nos indica que otra clase no podrá heredar de esta clase
+public final int varNumero = 12; -> indica que no se podrá cambiar el valor de la variable, trabaja como constante
+public static final LIMITE_CREDITO = 6; -> constantes en Java
+public static final Persona p1 = new Persona(); -> esto indica que la Referencia no se podrá modificar, o sea p1 no podrá apuntar a otro new Persona();
+public final void metodo() {} -> indica que dicho método no podrá ser sobre-escrito por otra clase que herede de la clase que lo contiene.
+
+
+
+********************************************** SECCIÓN 26: Fundamentos Java: Manejo de Arreglos en Java
+nombreArreglo = new TipoArreglo[tamaño];
+dias = new String[5];
+numeros = new int[5];
+
+tipo[] nombreArr = {elemento1, elemento2, elemento3, ...};
+String[] diasSemana = {"Lunes", "Martes", "Miercoles"};
+
+
+********************************************** SECCIÓN 27: Fundamentos Java: Manejo de Matrices en Java
+tipo[][] nombre o tipo nombre[][]; -> declaración
+int[][] dias;
+
+nombre = new tipo[filas][columnas]; -> instanciar matrices
+dias = new int[4][5];
+
+nombre[fila][columna] -> inicializar elementos de la matriz en una determinada posición
+dias[0][0] = 12;
+dias[0][1] = 45;
+
+
+variableReceptora = nombre[fila][columna]; -> leer valor de una posición en una matriz
+int valor1 = dias[0][0]; => 12
+int valor2 = dias[0][1]; => 45
+
+tipo[][] nombre = {{listaValores}, {listaValores}, {listaValores}};
+tipo[][] numeros = {{1,2,3}, {7,3,0}, {21,22,7}, {41,30,27}}; // 4 filas, 3 columnas
+                    1   2   3
+                    7   3   0
+                    21  22  7
+                    41  30  27
+
+
+
+********************************************** SECCIÓN 33: Programación con Java: Argumentos Variables en Java
+si el metodo tiene más param de entrada, el de variados siempre debe ir al final
+static void personas(Person... personas)
+static void personas(String trasaccion, Person... personas) 
+static void personas(String trasaccion, String tipo, Person... personas) 
+
+
+
+********************************************** SECCIÓN 44: Programación con Java: Clases Abstractas en Java
+public abstract class NombreClase
+No se puede instanciar. // NombreClase nombre = new NombreClase(); -- esto es un error
+public abstract void metodo(); // los métodos abstractos solo se definen, no tienen cuerpo... el cuerpo lo define la clase q hereda
+la clase hija está obligada a implementar todos los métodos abstractos, esto no es sobre-escritura ya q la clase padre solo define el método.
+
+
+********************************************** SECCIÓN 45: Programación con Java: Interfaces en Java
+atributos son: public static final por default
+métodos son: public abstract por default
+int MAX_REGISTROS = 10; // public static final int MAX_REGISTROS = 10;
+void insertar(); // public abstract void insertar();
+
+
+********************************************** SECCIÓN 46: Programación con Java: Manejo de JavaBeans en Java
+deben tener constructor vacío obligatoriamente
+los atributos deben ser privados, y cada uno debe tener su get y set; si es boolean será isNombreAtributo en vez de getNombreAtributo
+debe implementar la interfaz java.io.Serializable -> public class NombreBean implements java.io.Serializable {}
+
+IMPORTANTE: No son lo mismo q los Enterprice JavaBeans
+
+
+
+********************************************** SECCIÓN 50: Programación con Java: Entrada y Salida de Datos en Java
+
+API DE ENTRADA:****************
+
+java.lang.Object:
+    Reader (Interface): Tipo char
+        InputStreamReader:
+            FileReader:
+        BufferedReader:
+
+    InputStream (Interface): Tipo byte
+        FilterInputStream:
+            DataInputStream
+            BufferedInputStream
+
+
+API DE SALIDA:*****************
+java.lang.Object:
+    Writer (Interface): Tipo char
+        PrintWriter:
+        OutputStreamWriter:
+            FileWriter:
+        BufferedWriter:
+            PrintStream:
+
+    OutputStream (Interface): Tipo byte
+        FilterOutputStream:
+            BufferedOutputStream:
+            DataOutputStream:
+
+
+
+
+********************************************** SECCIÓN 56: Java con JDBC: Manejo de JDBC
+177. Manejo de JDBC - Tipo de Conexiones (DriverManager, DataSource, Pool de Conexiones)
+    JSE: DriverManager, Pool de Conexiones
+    JEE: Pool de Conexiones, DataSource
+
+Tipos Statement (Sentencias):
+    - Statement: Se utiliza para cualquier tipo de sentencia SQL pero no hace caché del SQL ejecutado
+    - PrepareStament: Hace caché de la sentencia ejecutado
+    - CallableStatement: Se usa para llamar procedimientos almacenados.
+
+La interfaz Statement tiene varios métodos:
+Sentencias SELECT:    
+    executeQuery(String SQL): Retorna un ResultSet
+
+Sentencias DML/DDL: Manipulation y Definition
+    executeUpdate(String SQL): Retorna int
+
+Cualquiera Sentencias SQL:
+    execute (String): Retorna boolean, Retorna true si el resultado es un ResultSet y false para cualquier otra sentencia
+
+
+
+********************************************** SECCIÓN 58: Java con JDBC: Patrones de Diseño
+Cohesión: una tarea específica, delegando otras tareas a otros componentes
+Acoplamiento: dependencia con otros componentes, es decir un cambio en él requiere cambios en otros.
+
+Lo ideal en el Diseño de Software es mayor Cohesión y menor Acoplamiento.
+
+Capa presentación: MVC, Front controller, DTO, etc
+Capa negocio: Business Delegate, Service Locator, DTO, etc
+Capa datos: DAO, DTO, etc
+
+
+********************************************** SECCIÓN 59: Java con JDBC: Manejo de Pool de Conexiones
+Habilidad conexiones en paralelo x si se necesite, cuando se conectan varios al mismo tiempo.
+
+
+********************************************** SECCIÓN 60: Servlets y JSPs: Introcción
+Arquitectura:
+    - Capa Cliente: Navegadores web. HTML, CSS, JavaScript
+    - Capa Web: JSPs, Servlets
+    - Capa Negocio: Objetos de Negocio
+    - Capa Datos: Objetos Entidad
+
+
+********************************************** SECCIÓN 67: Servlets y JSPs: Manejo de Cookies
+Una sesión en una aplicación web permite administrar varias peticiones de un mismo usuario.
+La necesidad surge que debido al protocolo HTTP no maneja estados, por lo cual entre petición y petición no guarda información del usuario.
+Las sesiones en los Servlets se puede manejar de dos formas:
+    - Cookies: Se usa para recordar información del usuario, ya que el protocolo HTTP es sin memoria o statless.
+               Contiene información en forma de nombre y valor, se almacena en el navegador Web.
+               El objetivo es almacenar información del usuario cuando visita una Web como lenguaje preferido, colores, etc.
+               No se deben utilizar para guardar información sensible como claves, tarjetas de crédito, etc.
+               Está en javax.servlet.http
+
+            Se puede leer es una petición HTTP (se itera el arreglo de cookies) y se puede escribir en una respuesta HTTP.
+            Cookie c = new Cookie("usuario", "Juan");
+            c.getName();
+
+            Leer todas las Cookies:
+            Cookie[] cookies = request.getCookies();
+
+            Agregar una cookie al response:
+            response.addCookie(c);
+
+    - URL Rewritting
+
+El API de los Servlets los maneja en HTTPSession.
+
+
+********************************************** SECCIÓN 70: Servlets y JSPs: Elementos de un JSP
+Elementos:
+- Expresiones: <%= expression %>, evalúa y se inserta en la salida del servlet; equivale a out.println(expression)
+- Scriptlets: <% codigo Java %> Puede contener cod. java q no necesariamente puede mostrarse al cliente, este cod. se inserta en el service() del Servlet generado.
+- Declaraciones: <%! codigo Java %> Se usa para variables o métodos de la clase. Se vuelve una variable de instancia.
+- jspx: Se usa código XML.
+
+Variables implícitas en un JSP:
+- request: HttpServletRequest
+- response: HttpServletResponse
+- out: es el objeto JspWriter (equivale a PrintWriter)
+- session: es el objeto HttpSession asociado con el objeto request
+- application: es el objeto ServletContext q se obtiene a partir del método getServletContext() en un Servlet.
+
+
+********************************************** SECCIÓN 70: Servlets y JSPs: Directivas con JSP
+- Nos permiten controlar el comportamiento del JSP.
+- Con ellas podemos especificar los siguiente:
+    * Las clases java q podemos importar en un JSP
+    * El tipo MIME utilizado
+    * Indicar si el JSP puede acceder a la sesión HTTP
+    * El tamaño del Buffer de salida
+    * Indicar la página de error en caso alguna excepción
+    * El manejo de multihilos y otras cosas.
+
+Atributos que podemos utilizar en los JSP:
+* Import: nos dice las clases q podemos importar en nuestro JSP. <%@ page import="package.Clase1, package.Clase2" %>
+* contentType: nos dice el tipo de datos q devolverá el JSP. <%@ page contentType="MIME-Type" %>
+* session: indica si vamos a tener acceso a Session. <%@ page session="true" %>
+* isELIgnored: por default un JSP trabaja con ExpressionLanguage. <%@ page isELIgnored="false" %>
+* buffer: podemos especificar el tamaño en Kb. Si se llega al máximo se hace un flush automático. <%@ page buffer="tamañoEnKb" %>
+* errorPage: especificar el JSP q va a manejar la excepción, y el JSP q maneja la excepción tendrá el attr isErrorPage en true; además La pagina de error se recomienda q sea privada por lo cual debe de ir en el WEB-INF.
+* isThreadSafe: se considera a JSP como seguro para conectarse por múltiples hilos por defualt es true.
+* extends: especifica la clase que va a heredar el JSP. <%@ page extends="package.Clase" %>
+
+
+
+********************************************** SECCIÓN 72: Servlets y JSPs: Inclusión de Archivos con JSP
+Se trata de insertar un JSP dentro de otro, existen dos formas:
+- Inclusión estática (translation time): tiempo de traducción
+    <%@ include file="paginaRelativa.jsp" %>
+    Reutilizar código en texto plano, html o jsp.
+    En este caso el JSP que se incluye puede afectar al JSP incluyente.
+    No se delega el control al JSP incluído, generando un único JSP.
+    Se pueden tener variables o métodos que se comparten entre los JSP.
+    Para tener una versión más reciente se recomienda recompilar de nuevo para tener la última versión.
+
+- Inclusión dinámica (request time) tiempo de Ejecución: Acá usamos una acción y no una directiva.
+    <jsp:include page="paginaRelativa.jsp" />
+    Reutilizar código en texto plano, html o jsp.
+    En este caso el JSP que se incluye NO puede afectar al JSP incluyente.
+    Se delega el control al JSP incluído y su salida se agrega al JSP principal.
+    No se comparten variables o métodos.
+    La página debe de ser relativa a la aplicación Web (uso de /)
+
+                                                                                estática                    dinámica
+Cuándo ocurre la Inclusión                                                      En tiempo de traducción     En tiempo de Ejecución
+Qué se incluye                                                                  El contenido del Archivo    La salida de la página   
+Número de Servlet generados                                                     1                           2
+Puede incluir cabeceros q afecten al JSP principal                              SI                          NO
+Puede incluir atributos o métodos en común                                      SI                          NO
+Se debe actualizar la página principal si se actualiza la página incluída       SI                          NO
+El JSP principal delega el control al JSP incluído                              NO                          SI     
+
+
+
+
+
+********************************************** SECCIÓN 72: Servlets y JSPs: Manejo de JavaBeans con JSP
+- Los JSP pueden acceder a un JavaBean
+- Es una clase Java que tiene ciertas reglas:
+    * Debe tener constructor vacío.
+    * Todos los atributos deben ser privados.
+    * Se debe generar los métodos get y set para cada atributo.
+- Un JSP usa el nombre de la propiedad para acceder o modificar el atributo del JavaBean. Se toma del método get y set.
+Por ej. si el atributo es nombre, noTelefono -> getNombre, setNombre, getTelefono, setTelefono.
+<jsp:getProperty ... property="nombre" />
+<jsp:setProperty ... property="telefono" />
+
+
+Alcance de atributos en un JSP (Scope): Servlet (reques, session, application), JSP(page, reques, session, application).
+Es la duración o tiempo de uso de una variable en una aplicación Web.
+    * page: es el más básico, se usa dentro de un JSP. Existe durante la traducción del JSP hacia un Servlet.
+    * request: existe cuando un usuario hace una petición hacia el servidor, una vez q llega se destruye. Existe durante una única petición.
+    * session: va a durar durante distintas peticiones q hagamos al servidor web por lo menos durante 30'.
+    * application: existe durante nuestra aplicación esté activa.
+
+Uso básico de los JavaBean:
+    * jsp:useBean: Permite acceder a un bean en un alcance (Scope) especificado.
+        <jsp:useBean id="nombreBean" class="paquete.Clase" />
+    *jsp:setProperty: Permite modificar una o varias propiedades de un bean especificado.
+        <jsp:setProperty name="nombreBean" property="nombreUsuario" value="Juan" />
+    *jsp:getProperty: Permite acceder a una propiedad de un bean especificado.
+        <jsp:setProperty name="nombreBean" property="nombreUsuario" />
+
+Los JavaBean se usa en JSF, Spring, Struts, etc.
+
+********************************************** SECCIÓN 74: Servlets y JSPs: EL (expression lenguage) con JSP
+- Nos permite simplificar el despliegue de información en un JSP usando JavaBeans.
+- Sintaxis con acciones JSP:
+    <jsp:useBean name="nombreBean" class="paquete.Clase" />
+    <jsp:getProperty name="nombreBean" property="nombre propiedad" />
+
+- Sintaxis con EL:
+    ${nombreBean.nombrePropiedad}       -> esta forma es la más común
+    ${nombreBean["nombrePropiedad"]}
+
+Las Características son:
+- Los objetos JavaBean a utilizar se deben agregar previamente en algún alcance (Scope) por medio del método setAttribute() en un servlet.
+    page, request, session, application
+
+- La notación es simplificada pero solo permite lectura de información (getters). La idea es q los servlets modifiquen los setters.
+- Permite acceder a propiedades de un JavaBean de manera anidada.
+    ${alumno.direccion.calle}
+
+- Acceso a propiedades de un objeto de tipo Collection o Arreglo, no es posible iterar los elementos.
+    ${lista[índice/llave]}
+
+- Conversiones automáticas de tipos de datos al desplegar la información.
+- Manejo automático de valores null o vacíos, convirtiéndolos en cadenas vacías.
+- Conjunto de operadores. No es una buena práctica.
+    ${3+2-1}
+    ${"x" > "y"}
+    ${3 >= 10/2}
+
+- Acceso a variables implícitas:
+    * Objeto pageContext: ${pageContext.session.id}
+    * Valores de parámetros como param y paramValues. ${param.nombre}
+    * Valores de cabeceros con header y headerValues. ${header["user-agent"]}
+    * Valores con el objeto Cookie. ${cookie.NombreCookie.value}
+    * Valores de atributos en algún alcance como pageScope, requestScope, sessionScope y applicationScope en ese orden.
+        ${sessionScope.rectangulo.area} o ${rectangulo.area}
+
+
+
+********************************************** SECCIÓN 75: Servlets y JSPs: Manejo de JSTL (JSP Standard Tag Library) en JSP
+Estiende los tags de los JSP, agregando principalmente los siguientes:
+    - core: Permite leer y manipular datos, así como iterar, agregar condiciones y otras funciones básicas.
+    - xml: Permite la manipulación y transformación de XML.
+    - sql: Permite ejecutar consultas a una Base de Datos, así como crear conexiones a las mismas.
+    - fmt: Permite dar formato a las cadenas, apoyado de conceptos como internacionalización (Locale)
+
+Configuración: Se debe de agregar las siguientes al class path.
+    - standar.jar
+    - jstl.jar
+
+Configuración de la directiva JSP:
+    - JSP Clásico: Esta uri se encuentra dentro de los jar antes mencionados.
+        <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+    
+    - Documento JSP (jspx):
+        <html
+            xmlns:c     = "http://java.sun.com/jsp/jstl/core"
+            xmlns:jsp   = "http://java.sun.com/JSP/Page" >
+    
+Librería Core de JSTL: encontramos los siguientes tag:
+    - Tags de despliegue de información: <c:out value:"${persona.nombre}" />
+    - Tags de creación y manipulación de variables: <c:set var="nombre" value="Carlos" scope="page" />
+    - Tags de elementos condicionales: 
+        <c:if test="${i > 0} />
+        <c:choose><c:when test="a">...
+    - Tags de iteración de elementos: <c:forEach var="persona" items="${personas}"> ...
+    - Tags de importación de recursos Web: <c:import url="recursoInternoExterno" >
+    - Tags de redireccionamiento: <c:redirect url="${nuevaURL}" />
+    - Tags de manejo de parámetros:
+        <c:import url="c-import-param.jsp" >
+            <c:param name="nombre" value="${param.select}" />
+        </c:import>
+
+
+
+
+********************************************** SECCIÓN 76: Servlets y JSPs: Patrón de Diseño MVC
+- Los Servlets están enfocados en controlar el flujo de la petición HTTP.
+- Los JSP están enfocados en desplegar la información de la aplicación Web.
+- La información que se comparte entre componentes (Servlets y JSP) suele manejarse con JavaBean.
+- El patrón de diseño nos permite integrar a los JSP (Vista), Servlets (Controlador) y los JavaBeans (Modelo).
+
+Frameworks que usan MVC:
+- JSP/Servlet: Se implementa manualmente con ayuda del objeto RequestDispatcher para controlar el flujo de la aplicación.
+- Struts: Framework de Apache, utiliza JSPs(Vista) con tags Struts, ActionForm (Modelo), Action (Controlador).
+- JavaServer Faces (JSF): Tecnología que usa JSPs (Vista) con tags JSF, ManagedBean (Controlador) y JavaBeans (Modelo).
+- SpringMVC: Extensión del framework de Spring, que utiliza JSP (Vista) con tags de Spring, Clases Java (Controlador) y JavaBeans (Modelo).
+
+
+Pasos generales de un Servlet Controlador:
+- Procesa y valida los parámetros (si aplica)
+- Realiza la lógica de presentación almacenando los resultados en JavaBeans.
+- Comparte el objeto bean a utilizar en algún alcance (scope)
+- Redirecciona al JSP seleccionado: 
+    RequestDispatcher dispatcher = request.getRequestDispatcher("resultado.jsp");
+    dispatcher.forward(request, response);
+
+
