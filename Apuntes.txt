@@ -26,7 +26,11 @@
         - Comercio Electrónico
         - Aplicaciones Web
 
+<<<<<<< HEAD
     JME: Soluciones de Consumo
+=======
+    JME (Java Micro Edition): Soluciones de Consumo
+>>>>>>> java_desde_cero
         - Celulares
         - PDAs
         - Televisores
@@ -479,4 +483,113 @@ Pasos generales de un Servlet Controlador:
     RequestDispatcher dispatcher = request.getRequestDispatcher("resultado.jsp");
     dispatcher.forward(request, response);
 
+
+<<<<<<< HEAD
+=======
+
+********************************************** SECCIÓN 78: JavaServer Faces: Introcción
+Es una tecnología para simplicar interfaz de usuario para aplicaciones Web Java.
+Es el marco de aplicaciones web estándar para JEE.
+Al ser un estándar cuenta con el apoyo de una industria muy sólida.
+
+Características:
+* Implementa el modelo MVC proporcionando un enfoque orientado a eventos.
+* RAD: Desarrollo rápido de aplicaciones para web
+* Componentes de interfaz de usuario: Tiene componentes reutilizables listos para usarse.
+* Render-kits: Los componentes pueden desplegarse no solamente en navegadores web, sino en Móviles u otros tipos.
+* Extensibilidad: Es altamente extensible debido a su arquitectura.
+* Internacionalización
+
+Nuevas características:
+* Manejo de condiciones por default más inteligentes: en casos de navegación simple, ya no es necesario agregar al archivos faces-Config.xml
+* Manejo de anotaciones para varias configuraciones: simplica el agregar un manage bean y agregarlo al faces-Config.xml
+* Soporte nativo para AJAX
+* Soporte por default para Facelets
+* Más componentes y validadores
+
+Tecnología de los Facelets
+* Son la tecnología estándar de despliegue en JSF
+* Pueden ser hasta un 30% más rápido en el análisis y elaboración de páginas
+* Fueron creados teniendo en cuenta el ciclo de vida de JSF
+* Al ejecutarlos, todos los componentes JSF se convierten a Instancias Java y con administradas por un component tree
+* Todos los componentes JSF se derivan de la clase abstracta javax.faces.component.UIComponent
+* El estado de los componentes (component tree) puede almacenarse del lado del cliente o servidor.
+
+
+********************************************** SECCIÓN 79: JavaServer Faces: Managed Beans en JSF
+
+
+
+
+********************************************** SECCIÓN 89: Java EE: Enterprice JavaBeans (EJB's) en Java EE
+Enterprice JavaBeans es una clase con características que lo hacen más potente y robusto.
+- Los métodos de un EJB son transaccionales
+- Los métodos puedes ser remotos
+- Facilidad de comunicación con las bases de datos
+- Los métodos pueden ser seguros
+
+La comunicación del cliente (Equipo cliente) y el EJB (Servidor de aplicaciones): RMI (Remote method Invocation)
+
+Características de un EJB:
+- Cuando un EJB se ejecuta en un contenedor (GlassFish, JBoss, WebSphere, WebLogic) de java EE que soporta EJB's, el contenedor agrega los siguientes servicios disponibles:
+	* Seguridad
+	* Llamadas asíncronas
+	* Llamadas remotas
+	* Web Services
+	* Transacciones
+	* Inyección de Dependencias (CDI)
+	* Pool de conexiones
+	* Thread Safety
+	* Scheduling
+	* Mensajería
+	* Interceptores
+	* Tolerancia a fallos
+
+
+Configuración de un EJB: Java Class + Annotation
+Tipos de Enterprice JavaBeans:
+	* Stateless: No guardan estado y se utiliza la anotación @Stateless (son los q más usan)
+	* Stateful: Guardan estado y se utiliza la anotación @Stateful
+	* Singleton: Solo existe una instancia en memoria y se utiliza la anotación @Singleton
+
+
+Formas de comunicarnos con un EJB: v3
+	* Interfaz local: Se utiliza cuando el cliente se encuentra en el mismo servidor Java.
+	* Interfaz remota: se utiliza cuando el cliente se encuentra fuera del servidor Java
+	* No interface: Es una variante y simplificación de los EJBs locales.
+
+Las interfaces de negocio son las q tienen la declaración de los métodos de negocio q son visibles al cliente, son implementadas por una clase Java.
+Hay una clase llamada Bean, puede implementar varios o cero métodos del negocio, puede anotarse como @Stateless, @Stateful o @Singleton
+
+Cliente EJB vía JNDI
+	* JNDI es un API que permite encontrar servicios o recursos empresariables en un servidor de aplicaciones Java.
+	* Para encontrar un EJB a partir de la versión 3.1 podemos utilizar la siguiente sintaxis:
+		java:global[/<app-name>]/<module-name>/<bean-name>/[!<fully-qualified-interface-name>]
+		Ejemplo: "java:global/miApp/classes/HolaMundoEJB!beans.HolaMundoEJB"
+
+Inyección de Dependencias:
+	* @EJB
+	* @Inject (aplica el concepto de CDI)
+
+
+Comparación entre EJB y EJB Lite:	API SOPORTADA				EJB lite		EJB
+									Stateless beans				X				X
+									stateful beans				X				X
+									Singleton beans				X				X
+									Message driven beans						X
+									No interfaces				X				X
+									Local interfaces			X				X
+									Remote interfaces							X
+									Web services interfaces						X
+									Asynchronous Invocation						X
+									Interceptores				X				X
+									Daclarative security		X				X
+									Declarative transactions	X				X
+									Timer Services				X				X
+									EJB 2.x support								X
+									CORBA Interoperability						X
+
+Empaquetamiento de un EJB
+	* ear
+	* war
 

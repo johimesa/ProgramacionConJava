@@ -1,0 +1,5 @@
+pe\johimesa\domain\Persona.class
+pe\johimesa\service\PersonaService.class
+pe\johimesa\service\PersonaServiceRemote.class
+pe\johimesa\web\PersonaServlet.class
+pe\johimesa\service\PersonaServiceImpl.class
