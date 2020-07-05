@@ -26,11 +26,7 @@
         - Comercio Electrónico
         - Aplicaciones Web
 
-<<<<<<< HEAD
-    JME: Soluciones de Consumo
-=======
     JME (Java Micro Edition): Soluciones de Consumo
->>>>>>> java_desde_cero
         - Celulares
         - PDAs
         - Televisores
@@ -484,8 +480,6 @@ Pasos generales de un Servlet Controlador:
     dispatcher.forward(request, response);
 
 
-<<<<<<< HEAD
-=======
 
 ********************************************** SECCIÓN 78: JavaServer Faces: Introcción
 Es una tecnología para simplicar interfaz de usuario para aplicaciones Web Java.
@@ -592,4 +586,36 @@ Comparación entre EJB y EJB Lite:	API SOPORTADA				EJB lite		EJB
 Empaquetamiento de un EJB
 	* ear
 	* war
+
+
+********************************************** SECCIÓN 90: Java EE: Java Persistence API (JPA)
+Es el estándar de persistencia de Java. implementa conceptos de frameworks ORM (Object Rational Mapping)
+Permite mapear una tabla de BD con una clase Java.
+
+Características:
+	* Persistencia utilizando POJOs.
+	* No intrusivo
+	* Consultas utilizando Objetos Java.
+	* Configuración simplificada.
+	* Integración.
+	* Testing.
+
+Clase de entidad:
+	* Es un POJO y puede configurarse por medio de anotaciones o un archivo XML.
+	@Entity
+	public class Persona {
+		
+	}
+
+
+API de JPA y Entity Manager (interfaz)
+	Persistence
+		1 Crea * -> EntityManagerFactory	-> 1 configurada por 1 -> PersistenceUnit
+			1 Crea * -> EntityManager		-> * maneja 1 -> PersistenceContext
+	
+	
+	
+	
+	
+	
 
